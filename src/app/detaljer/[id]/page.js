@@ -10,7 +10,7 @@ const Page = async ({ params }) => {
 
   return (
     <div className="flex flex-col gap-10">
-      <Link href="/">
+      <Link href="/produkter">
         <button className="flex gap-2 items-center">
           <IoIosArrowBack /> Go back
         </button>
