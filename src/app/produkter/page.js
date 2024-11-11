@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import AlleProdukter from "@/components/AlleProdukter";
 
 let response = await fetch("https://dummyjson.com/products");
 let data = await response.json();
