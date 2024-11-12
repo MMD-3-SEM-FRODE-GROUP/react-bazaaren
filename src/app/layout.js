@@ -32,17 +32,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-  style={{ ...roboto.style, backgroundColor: "white" }}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ ...roboto.style, backgroundColor: "white" }}>
         <Navigation />
-      <main
-  className={roboto.className}
-  style={{ ...roboto.style, backgroundColor: "white", margin: "25px" }}
->
-  {children}
-</main>
+        <main className={roboto.className} style={{ ...roboto.style, backgroundColor: "white", margin: "25px" }}>
+          {children}
+        </main>
 
-            <Footer />
+        <Footer />
       </body>
     </html>
   );

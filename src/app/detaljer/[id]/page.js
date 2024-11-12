@@ -14,7 +14,7 @@ const Page = async ({ params }) => {
 
   return (
     <section className="lg:p-[64px] sm:p-[20px]">
-      <div className="flex items-center gap-[8px] mb-10">
+      <div className="flex items-center gap-[8px] mb-[24px] text-[0.875rem]">
         <Link href="/produkter">Shop all</Link>
         <IoIosArrowForward />
         <Link href="#">{product.category}</Link>
@@ -47,7 +47,7 @@ const Page = async ({ params }) => {
             <input type="number" className="border border-black w-[64px] p-[12px] text-black" />
           </div>
 
-          <div className="grid gap-[16px]">
+          <div className="grid gap-[16px] mt-[8px] mb-[8px]">
             <button className="bg-black text-white p-[12px]">Add To Cart</button>
             <button className="bg-white text-black border border-black p-[12px]">Buy now</button>
 
