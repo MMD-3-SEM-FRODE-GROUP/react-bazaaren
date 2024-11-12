@@ -2,19 +2,16 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export default async function Cart() {
-
   const cartItems = [
     { id: 1, name: "Product 1", price: 20.99, quantity: 2 },
     { id: 2, name: "Product 2", price: 15.49, quantity: 1 },
-    { id: 3, name: "Product 3", price: 35.99, quantity: 1 }
+    { id: 3, name: "Product 3", price: 35.99, quantity: 1 },
   ];
-
 
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleRemoveItem = (itemId) => {
     console.log(`Remove item with ID: ${itemId}`);
-
   };
 
   return (
@@ -33,10 +30,7 @@ export default async function Cart() {
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-sm">Qty: {item.quantity}</span>
-                  <button 
-                    onClick={() => handleRemoveItem(item.id)}
-                    className="text-red-600 hover:text-red-800 text-sm"
-                  >
+                  <button onClick={() => handleRemoveItem(item.id)} className="text-red-600 hover:text-red-800 text-sm">
                     Remove
                   </button>
                 </div>
@@ -50,15 +44,12 @@ export default async function Cart() {
           </div>
 
           <div className="flex justify-center mt-6">
-            <button 
-              className="bg-[#f5a623] text-white py-3 px-8 rounded-lg font-semibold"
-            >
+            <button className="bg-[#f5a623] text-white py-3 px-8 rounded-lg font-semibold">
               <Link href="/payment">Proceed to Payment</Link>
             </button>
           </div>
         </div>
 
-      
         <div className="flex gap-[20px] mt-[32px]">
           <button className="bg-white text-black py-[12px] px-[24px]">
             <Link href="/products">Continue Shopping</Link>
