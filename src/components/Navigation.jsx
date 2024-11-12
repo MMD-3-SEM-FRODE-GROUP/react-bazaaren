@@ -13,15 +13,15 @@ const Navigation = () => {
           <Image src={bazaarlogo} alt="navy" className="" width={50} />
         </Link>
       </div>
-      <nav className="">
-        <ul className="flex items-center gap-[20px]">
-          <li>
+      <nav className=" text-black ">
+        <ul className="flex items-center gap-[20px] ">
+          <li className="hover:border-b-2 hover:border-black">
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li className="hover:border-b-2 hover:border-black">
             <Link href="/produkter">Produkter</Link>
           </li>
-          <li>
+          <li className="hover:border-b-2 hover:border-black">
             <Link href="/produkter">
               <FiShoppingCart />
             </Link>
