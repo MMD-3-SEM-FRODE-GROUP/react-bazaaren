@@ -7,6 +7,12 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        "hero-pattern": "url('/images/hero.avif')",
+      },
+      fontFamily: {
+        body: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],

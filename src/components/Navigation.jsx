@@ -1,13 +1,16 @@
 import Link from "next/link";
-import { IoLogoNpm } from "react-icons/io5";
+import Image from "next/image";
+
+import bazaarlogo from "../images/bazaarlogo.svg";
+
 import { FiShoppingCart } from "react-icons/fi";
 
 const Navigation = () => {
   return (
-    <header className="flex justify-between	 items-center p-[20px] bg-slate-300 shadow-md">
+    <header className="flex justify-between	 items-center p-[20px] bg-white shadow-md text-[1rem]">
       <div>
         <Link href="/">
-          <IoLogoNpm size={50} />
+          <Image src={bazaarlogo} alt="navy" className="" width={50} />
         </Link>
       </div>
       <nav className="">
