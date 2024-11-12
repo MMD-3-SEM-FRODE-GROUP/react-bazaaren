@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 
@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
         <main className={roboto.className} style={roboto.style}>
           {children}
         </main>
+            <Footer />
       </body>
     </html>
   );
