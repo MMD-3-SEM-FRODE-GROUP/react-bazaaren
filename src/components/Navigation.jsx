@@ -10,18 +10,18 @@ const Navigation = () => {
     <header className="flex justify-between	 items-center p-[20px] bg-white shadow-md text-[1rem]">
       <div>
         <Link href="/">
-          <Image src={bazaarlogo} alt="navy" className="" width={50} />
+          <Image src={bazaarlogo} width={50} />
         </Link>
       </div>
       <nav className=" text-black ">
         <ul className="flex items-center gap-[20px] ">
-          <li className="hover:border-b-2 hover:border-black">
+          <li className="hover:underline hover:font-bold">
             <Link href="/">Home</Link>
           </li>
-          <li className="hover:border-b-2 hover:border-black">
+          <li className="hover:underline hover:font-bold">
             <Link href="/produkter">Products</Link>
           </li>
-          <li className="hover:border-b-2 hover:border-black">
+          <li className="hover:underline hover:font-bold">
             <Link href="/payment">
               <FiShoppingCart />
             </Link>

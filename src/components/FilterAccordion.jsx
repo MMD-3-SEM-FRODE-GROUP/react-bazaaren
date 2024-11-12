@@ -32,7 +32,7 @@ const FilterAccordion = ({ categories, onFilterChange }) => {
               onClick={() => handleCategoryClick(category)}
               className={`py-2 capitalize ${
                 selectedCategory === category
-                  ? "text-blue-600 font-bold underline" // Aktiv styling
+                  ? "text-black font-bold underline" // Aktiv styling
                   : "text-black"
               }`}
             >
