@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
                 
           
-                <div className="md:w-1/2">
+                <div id="Footer" className="md:w-1/2">
                     <h4 className="text-lg font-semibold mb-4">Sign up to our newsletter</h4>
                     <form className="flex">
                         <input
