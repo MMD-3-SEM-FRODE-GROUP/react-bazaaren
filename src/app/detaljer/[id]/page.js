@@ -13,8 +13,8 @@ const Page = async ({ params }) => {
   let product = await response.json();
 
   return (
-    <section className="col-start-2 col-end-3 p-[20px]">
-      <div className="flex items-center gap-[8px] mb-10 mt-10">
+    <section className="lg:p-[64px] sm:p-[20px]">
+      <div className="flex items-center gap-[8px] mb-10">
         <Link href="/produkter">Shop all</Link>
         <IoIosArrowForward />
         <Link href="#">{product.category}</Link>
@@ -22,9 +22,9 @@ const Page = async ({ params }) => {
         <p className="font-bold">{product.title}</p>
       </div>
 
-      <article className="grid grid-cols-2 gap-[80px] items-start">
+      <article className="grid lg:grid-cols-2 md:grid-cols-1 lg:gap-[80px] md:gap-[32px] items-start ">
         <div className="flex gap-[16px]">
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px] max-md:hidden">
             <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
             <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
             <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
