@@ -11,7 +11,7 @@ const Produkter = () => {
       <article className="flex flex-col md:flex-row justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl md:text-[3.6rem] font-bold">Produkter</h1>
-          <p className="text-sm md:text-base">lorem ipsum</p>
+          <p className="text-sm md:text-base ml-1">lorem ipsum</p>
         </div>
         <button className="mt-4 md:mt-0 text-sm md:text-base px-4 py-2 bg-blue-500 text-white rounded">
           Se alle
