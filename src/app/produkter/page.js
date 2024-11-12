@@ -35,7 +35,7 @@ const Produkter = () => {
             >
               {product.title}
             </Link>
-            <p className="font-light text-xs md:text-[1.25rem]">{product.price} kr</p>
+            <p className="font-light text-xs md:text-[1.25rem] mt-2">{product.price} kr</p>
           </div>
         ))}
       </div>
