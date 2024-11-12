@@ -19,10 +19,10 @@ const Navigation = () => {
             <Link href="/">Home</Link>
           </li>
           <li className="hover:border-b-2 hover:border-black">
-            <Link href="/produkter">Produkter</Link>
+            <Link href="/produkter">Products</Link>
           </li>
           <li className="hover:border-b-2 hover:border-black">
-            <Link href="/produkter">
+            <Link href="/payment">
               <FiShoppingCart />
             </Link>
           </li>
