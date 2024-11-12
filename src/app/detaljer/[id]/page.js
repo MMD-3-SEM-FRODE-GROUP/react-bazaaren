@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowBack } from "react-icons/io";
+
+import { IoIosArrowForward } from "react-icons/io";
 
 import Accordion from "@/components/Accordion";
 
@@ -12,25 +13,24 @@ const Page = async ({ params }) => {
   let product = await response.json();
 
   return (
-    <section className="col-start-2 col-end-3">
-      <div className="mb-10 mt-10">
-        <Link href="/produkter">Shop all / </Link>
-        <Link href="#"> Category / </Link>
-        <Link href="#" className="font-bold">
-          {" "}
-          {product.title}
-        </Link>
+    <section className="col-start-2 col-end-3 p-[20px]">
+      <div className="flex items-center gap-[8px] mb-10 mt-10">
+        <Link href="/produkter">Shop all</Link>
+        <IoIosArrowForward />
+        <Link href="#">{product.category}</Link>
+        <IoIosArrowForward />
+        <p className="font-bold">{product.title}</p>
       </div>
 
-      <article className="grid grid-cols-2 gap-[80px]">
+      <article className="grid grid-cols-2 gap-[80px] items-start">
         <div className="flex gap-[16px]">
-          <div>
-            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border" />
-            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border" />
-            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border" />
-            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border" />
+          <div className="flex flex-col gap-[16px]">
+            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
+            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
+            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
+            <Image src={product.thumbnail} width={80} height={100} alt={product.title} className="border w-[80px] h-[100px]" />
           </div>
-          <Image src={product.thumbnail} width={520} height={640} alt={product.title} className="border" />
+          <Image src={product.images[0]} width={520} height={640} alt={product.title} className="border w-[520px] h-[640px]" />
         </div>
         <div className="flex flex-col gap-[24px]">
           <div>
@@ -44,15 +44,16 @@ const Page = async ({ params }) => {
 
           <div>
             <p>Quantity</p>
+            <input type="number" className="border border-black w-[64px] p-[12px] text-black" />
           </div>
 
           <div className="grid gap-[16px]">
             <button className="bg-black text-white p-[12px]">Add To Cart</button>
-            <button className="bg-white text-black border p-[12px]">Buy now</button>
+            <button className="bg-white text-black border border-black p-[12px]">Buy now</button>
 
             <p className="text-center	text-[0.75rem]">Free shipping over $50</p>
           </div>
-          <Accordion />
+          <Accordion product={product} />
         </div>
       </article>
     </section>

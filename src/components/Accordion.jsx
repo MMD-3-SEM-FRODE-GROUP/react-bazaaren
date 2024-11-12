@@ -3,15 +3,39 @@ import { useState } from "react";
 
 import Item from "./Item";
 
-const Accordion = () => {
+const Accordion = ({ product }) => {
   const [isOpen, setIsOpen] = useState(0);
 
+  const items = [
+    {
+      id: 1,
+      title: "Dimensions",
+      content: `Width: ${product.dimensions.width}, Height: ${product.dimensions.height}, Depth: ${product.dimensions.depth}`,
+    },
+    {
+      id: 2,
+      title: "Description",
+      content: product.description,
+    },
+    {
+      id: 3,
+      title: "Category",
+      content: `This product belongs to the category: ${product.category}`,
+    },
+    {
+      id: 4,
+      title: "Shipping Information",
+      content: product.shippingInformation,
+    },
+  ];
   return (
-    <article className="relative overflow-hidden">
-      <section className="max-w-xl ">
-        {/* Vi siger, at hvis isOpen er true, så skal vi vise Item komponenten, og så skal vi give den 3 props, som er isOpen, setIsOpen og item. */}
-        {/* vi giver item en number, så vi kan se hvilken item vi er på */}
-        <Item isOpen={isOpen} setIsOpen={setIsOpen} item={1} />
+    <article className="relative w-full overflow-hidden">
+      <section className="">
+        {/* <h1 className="text-2xl font-bold text-slate-900 mb-4">About the product</h1> */}
+
+        {items.map(({ id, title, content }) => (
+          <Item key={id} isOpen={isOpen} setIsOpen={setIsOpen} item={id} title={title} content={content} />
+        ))}
       </section>
     </article>
   );

@@ -1,30 +1,31 @@
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
-const Item = ({ isOpen, setIsOpen, item }) => {
+const Item = ({ isOpen, setIsOpen, item, title, content, product }) => {
   return (
-    <div className="border-b border-slate-200 ">
-      <header>
+    <section className="border-t border-black ">
+      <div>
         <button
           onClick={() => {
             // hvis isOpen er lig med item, så skal vi sætte isOpen til 0, ellers skal vi sætte isOpen til item
             isOpen === item ? setIsOpen(0) : setIsOpen(item);
           }}
-          className="flex items-center justify-between text-black w-full py-2 font-semibold"
+          className="flex items-center justify-between text-black w-full py-[16px] font-semibold"
         >
-          <span className="">Details</span>
+          <span className="font-semibold text-[1.1rem]">{title}</span>
 
           {/* hvis isOpen er lig med item, så skal vi vise FaMinus, ellers skal vi vise FaPlus */}
-          <span>{isOpen === item ? <FaMinus className="text-blue-900 ml-8 self-start" /> : <FaPlus className="text-black ml-8 self-start" />}</span>
+          <span>{isOpen === item ? <IoIosArrowUp className="text-blue-900 ml-8 self-start" /> : <IoIosArrowDown className="text-black ml-8 self-start" />}</span>
         </button>
-      </header>
+      </div>
 
       {/* Her er der en if statement, som kun viser det indhold, som er i denne if statement, hvis isOpen er true */}
       {isOpen === item && (
-        <section className="text-sm text-slate-600 bg-slate-100 p-4">
-          <p className="text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam saepe expedita tempore dicta aspernatur culpa eveniet animi cumque labore impedit aperiam, iusto consectetur voluptatibus odio quam? Mollitia veritatis ut deleniti.</p>
-        </section>
+        <article className="text-[1rem] mb-[24px]">
+          <p className="text-black">{content}</p>
+          {/* <p>{`Width: ${product.dimensions.width}, Height: ${product.dimensions.height}, Depth: ${product.dimensions.depth}`}</p> */}
+        </article>
       )}
-    </div>
+    </section>
   );
 };
 
