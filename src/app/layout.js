@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 
@@ -32,11 +32,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={roboto.style}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+  style={{ ...roboto.style, backgroundColor: "white" }}>
         <Navigation />
-        <main className={roboto.className} style={roboto.style}>
-          {children}
-        </main>
+      <main
+  className={roboto.className}
+  style={{ ...roboto.style, backgroundColor: "white", margin: "25px" }}
+>
+  {children}
+</main>
+
+            <Footer />
       </body>
     </html>
   );
