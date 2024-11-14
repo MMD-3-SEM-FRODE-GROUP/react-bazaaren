@@ -39,7 +39,6 @@ const Produkter = () => {
 
   return (
     <section className="relative text-black px-4 md:px-0 flex">
-
       <div className="flex-grow">
         <article className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div>
@@ -76,17 +75,14 @@ const Produkter = () => {
         </article>
       </div>
 
-
-      <div
-        className={`absolute top-0 right-0 p-4 transition-all duration-300 ${
-          cartExpanded ? "w-64 bg-gray-100 border border-gray-300" : "w-12"
-        }`}
-      >
-        <h2 className="text-xl font-bold mb-2 text-center">Cart</h2>
-        
-        {cartItems.length === 0 ? (
-          <p className="text-sm text-center">🛒</p>
-        ) : (
+      {cartItems.length > 0 && (
+        <div
+          className={`absolute top-0 right-0 p-4 transition-all duration-300 ${
+            cartExpanded ? "w-64 bg-gray-100 border border-gray-300" : "w-12"
+          }`}
+        >
+          <h2 className="text-xl font-bold mb-2 text-center">Cart</h2>
+          
           <div>
             <ul className="mb-4 space-y-2">
               {cartItems.map((item, index) => (
@@ -112,8 +108,8 @@ const Produkter = () => {
               </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 };
