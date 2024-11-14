@@ -13,7 +13,7 @@ const Page = async ({ params }) => {
   let product = await response.json();
 
   return (
-    <section className="lg:p-[64px] sm:p-[20px]">
+    <section className="lg:p-[64px] sm:p-[20px] text-black">
       <div className="flex items-center gap-[8px] mb-[24px] text-[0.875rem]">
         <Link href="/produkter">Shop all</Link>
         <IoIosArrowForward />
