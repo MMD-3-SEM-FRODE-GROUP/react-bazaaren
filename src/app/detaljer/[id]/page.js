@@ -44,7 +44,7 @@ const Page = async ({ params }) => {
 
           <div>
             <p>Quantity</p>
-            <input type="number" className="border border-black w-[64px] p-[12px] text-black" />
+            <input type="number" defaultValue="1" className="border border-black w-[64px] p-[12px] text-black" />
           </div>
 
           <div className="grid gap-[16px] mt-[8px] mb-[8px]">
