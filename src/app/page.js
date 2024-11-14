@@ -22,6 +22,7 @@ export default async function Home() {
   );
 }
 
-
-{/* searchParams */}
-const id = await searchParams.id 
+{
+  /* searchParams */
+}
+const id = await searchParams.id;
