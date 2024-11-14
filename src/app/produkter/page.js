@@ -57,18 +57,18 @@ const Produkter = () => {
 
         <article className="grid grid-cols-2 md:grid-cols-4 gap-x-2 md:gap-x-[4rem] gap-y-8 md:gap-y-[4rem]">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="flex flex-col items-center">
-              <Image
+            <div key={product.id} className="flex flex-col">
+              <Link href={`/detaljer/${product.id}`}><Image
                 src={product.images[0]}
                 width={304}
                 height={364.8}
                 alt={product.title}
                 className="w-[304px] h-[364.8px] border mb-4 object-cover"
-              />
-              <Link href={`/detaljer/${product.id}`} className="font-semibold text-sm md:text-[1.125rem] text-center">
+              /></Link>
+              <Link href={`/detaljer/${product.id}`} className="font-semibold text-sm md:text-[1.125rem] leading-6">
                 {product.title}
               </Link>
-              <p className="font-light text-xs md:text-[1.25rem] mt-2">{product.price} kr</p>
+              <p className="font-semibold text-xs md:text-[1.25rem] mt-2 leading-6">${product.price}</p>
               <button
                 onClick={() => addToCart(product)}
                 className="bg-black text-white mt-3 py-[12px] px-[24px] border border-transparent hover:bg-white hover:text-black hover:border-black transition-all"
