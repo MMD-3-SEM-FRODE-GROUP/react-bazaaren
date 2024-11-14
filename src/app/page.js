@@ -21,3 +21,7 @@ Welcome to our bazaar, where you’ll find a unique selection of traditional and
     </section>
   );
 }
+
+
+{/* searchParams */}
+const id = await searchParams.id 
