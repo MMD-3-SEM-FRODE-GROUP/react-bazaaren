@@ -8,8 +8,8 @@ const Produkter = () => {
   const [data, setData] = useState({ products: [] });
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [cartItems, setCartItems] = useState([]); // Cart items state
-  const [cartExpanded, setCartExpanded] = useState(false); // Cart visibility state
+  const [cartItems, setCartItems] = useState([]); 
+  const [cartExpanded, setCartExpanded] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
