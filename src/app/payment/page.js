@@ -8,9 +8,7 @@ import { useEffect, useState } from "react";
 export default function Payment() {
   const searchParams = useSearchParams();
   const itemsParam = searchParams.get("items");
-  const totalPriceParam = searchParams.get("totalPrice");
   const [products, setProducts] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     if (itemsParam) {
@@ -23,11 +21,10 @@ export default function Payment() {
 
       fetchProducts();
     }
+  }, [itemsParam]);
 
-    if (totalPriceParam) {
-      setTotalPrice(parseFloat(totalPriceParam));
-    }
-  }, [itemsParam, totalPriceParam]);
+  // Calculate the total price for all products
+  const totalPrice = products.reduce((total, product) => total + product.price, 0);
 
   return (
     <div className="p-4">
@@ -43,7 +40,7 @@ export default function Payment() {
           </li>
         ))}
       </ul>
-      <div className="mt-6 text-lg font-bold">Total Price: {totalPrice.toFixed(2)} $</div>
+      <div className="mt-6 text-lg font-bold">Total Price: {totalPrice} $</div>
     </div>
   );
 }

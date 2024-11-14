@@ -82,15 +82,15 @@ const Produkter = () => {
                   <Image src={item.images[0]} width={40} height={40} alt={item.title} className="w-10 h-10 mr-2 rounded" />
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold">{item.title}</span>
-                    <span className="text-sm">{item.price} kr</span>
+                    <span className="text-sm">{item.price} $</span>
                   </div>
                 </li>
               ))}
             </ul>
             <div className="text-center">
-              <p className="font-semibold mb-2">Total: {totalPrice} kr</p>
+              <p className="font-semibold mb-2">Total: {totalPrice} $</p>
               {/* HER HAR JEG TILFØJET NOGET */}
-              <Link href={`/payment?items=${cartItems.map((item) => item.id).join(",")}&totalPrice=${totalPrice}`} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
+              <Link href={`/payment?items=${encodeURIComponent(cartItems.map((item) => item.id).join(","))}&totalPrice=${totalPrice}`} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
                 Pay Now
               </Link>
               {/* <button onClick={openPaymentModal} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
