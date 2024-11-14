@@ -10,7 +10,7 @@ const Navigation = () => {
     <header className="flex justify-between	 items-center p-[20px] bg-white shadow-md text-[1rem]">
       <div>
         <Link href="/">
-          <Image src={bazaarlogo} width={50} />
+          <Image src={bazaarlogo} width={50} alt="logo" />
         </Link>
       </div>
       <nav className=" text-black ">
@@ -22,7 +22,7 @@ const Navigation = () => {
             <Link href="/produkter">Products</Link>
           </li>
           <li className="hover:underline hover:font-bold">
-            <Link href="/payment">
+            <Link href="/pay">
               <FiShoppingCart />
             </Link>
           </li>
