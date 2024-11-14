@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -33,7 +35,7 @@ export default function Payment() {
       <ul className="space-y-4">
         {products.map((product) => (
           <li key={product.id} className="flex items-center space-x-4">
-            <img src={product.thumbnail} alt={product.title} width={100} className="rounded border" />
+            <Image src={product.thumbnail} alt={product.title} width={100} height={100} className="rounded border" />
             <div>
               <h2 className="text-lg font-semibold">{product.title}</h2>
               <p className="text-gray-600">Price: {product.price} $</p>
