@@ -89,15 +89,19 @@ const Produkter = () => {
             </ul>
             <div className="text-center">
               <p className="font-semibold mb-2">Total: {totalPrice} kr</p>
-              <button onClick={openPaymentModal} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
+              {/* HER HAR JEG TILFØJET NOGET */}
+              <Link href={`/payment?items=${cartItems.map((item) => item.id).join(",")}&totalPrice=${totalPrice}`} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
                 Pay Now
-              </button>
+              </Link>
+              {/* <button onClick={openPaymentModal} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
+                Pay Now
+              </button> */}
             </div>
           </div>
         </div>
       )}
 
-      {showPaymentModal && (
+      {/* {showPaymentModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg w-11/12 sm:w-96">
             <h2 className="text-xl font-bold mb-4 text-center">Payment Details</h2>
@@ -130,7 +134,7 @@ const Produkter = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </section>
   );
 };
