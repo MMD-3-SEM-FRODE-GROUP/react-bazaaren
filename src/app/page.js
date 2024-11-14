@@ -14,7 +14,7 @@ Welcome to our bazaar, where you’ll find a unique selection of traditional and
             <Link href="/produkter">New arrivals</Link>
           </button>
           <button className="border border-white py-[12px] px-[24px] hover:bg-orange-900 hover:text-white transition-all">
-            <Link href="#">Login</Link>
+            <Link href="/produkter">Sale</Link>
           </button>
         </div>
       </div>
