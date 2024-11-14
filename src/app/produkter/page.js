@@ -63,7 +63,7 @@ const Produkter = () => {
               <Link href={`/detaljer/${product.id}`} className="font-bold text-sm md:text-[1.125rem] leading-6">
                 {product.title}
               </Link>
-              <p className="font-bold text-xs md:text-[1.25rem] mt-2">{product.price} kr</p>
+              <p className="font-bold text-xs md:text-[1.25rem] mt-2">{product.price} $</p>
               <button onClick={() => addToCart(product)} className="bg-black text-white mt-3 py-[12px] px-[24px] border border-transparent hover:bg-white hover:text-black hover:border-black transition-all">
                 Add to cart
               </button>

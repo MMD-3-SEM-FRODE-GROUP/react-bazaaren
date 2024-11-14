@@ -11,7 +11,7 @@ export default async function Home() {
         </p>
         <div className="flex gap-[20px] mt-[32px]">
           <button className="bg-white text-black py-[12px] px-[24px] hover:bg-black hover:text-white transition-all">
-            <Link href="/produkter">New arrivals</Link>
+            <Link href="/produkter">View products</Link>
           </button>
           <button className="border border-white py-[12px] px-[24px] hover:bg-orange-900 hover:text-white transition-all">
             <Link href="/produkter">Sale</Link>
