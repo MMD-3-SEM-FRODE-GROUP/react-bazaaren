@@ -23,9 +23,7 @@ const Produkter = () => {
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setFilteredProducts(
-      category === "all" ? data.products : data.products.filter((product) => product.category === category)
-    );
+    setFilteredProducts(category === "all" ? data.products : data.products.filter((product) => product.category === category));
   };
 
   const addToCart = (product) => {
@@ -37,7 +35,7 @@ const Produkter = () => {
   const categories = ["all", "fragrances", "beauty", "furniture", "groceries"];
 
   const openPaymentModal = () => {
-    setShowPaymentModal(true); 
+    setShowPaymentModal(true);
   };
 
   const closePaymentModal = () => setShowPaymentModal(false);
@@ -45,7 +43,7 @@ const Produkter = () => {
   return (
     <section className="relative text-black px-4 md:px-0 flex">
       <div className="flex-grow">
-        <article className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <article className="flex flex-col md:flex-row justify-between mb-8">
           <div>
             <h1 className="text-3xl md:text-[3.6rem] font-bold">Products</h1>
           </div>
@@ -57,22 +55,16 @@ const Produkter = () => {
 
         <article className="grid grid-cols-2 md:grid-cols-4 gap-x-2 md:gap-x-[4rem] gap-y-8 md:gap-y-[4rem]">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="flex flex-col items-center">
-              <Image
-                src={product.images[0]}
-                width={304}
-                height={364.8}
-                alt={product.title}
-                className="w-[304px] h-[364.8px] border mb-4 object-cover"
-              />
-              <Link href={`/detaljer/${product.id}`} className="font-semibold text-sm md:text-[1.125rem] text-center">
+            <div key={product.id} className="flex flex-col">
+              <Link href={`/detaljer/${product.id}`}>
+                <Image src={product.images[0]} width={304} height={364.8} alt={product.title} className="w-[304px] h-[364.8px] border mb-4 object-cover leading-6" />
+              </Link>
+
+              <Link href={`/detaljer/${product.id}`} className="font-bold text-sm md:text-[1.125rem] leading-6">
                 {product.title}
               </Link>
               <p className="font-light text-xs md:text-[1.25rem] mt-2">{product.price} kr</p>
-              <button
-                onClick={() => addToCart(product)}
-                className="bg-black text-white mt-3 py-[12px] px-[24px] border border-transparent hover:bg-white hover:text-black hover:border-black transition-all"
-              >
+              <button onClick={() => addToCart(product)} className="bg-black text-white mt-3 py-[12px] px-[24px] border border-transparent hover:bg-white hover:text-black hover:border-black transition-all">
                 Add to cart
               </button>
             </div>
@@ -81,21 +73,13 @@ const Produkter = () => {
       </div>
 
       {cartItems.length > 0 && !showPaymentModal && (
-        <div
-          className="absolute top-0 right-0 p-4 bg-gray-100 border border-gray-300 w-64 transition-all duration-300"
-        >
+        <div className="absolute top-0 right-0 p-4 bg-gray-100 border border-gray-300 w-64 transition-all duration-300">
           <h2 className="text-xl font-bold mb-2 text-center">Cart</h2>
           <div>
             <ul className="mb-4 space-y-2">
               {cartItems.map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <Image
-                    src={item.images[0]}
-                    width={40}
-                    height={40}
-                    alt={item.title}
-                    className="w-10 h-10 mr-2 rounded"
-                  />
+                  <Image src={item.images[0]} width={40} height={40} alt={item.title} className="w-10 h-10 mr-2 rounded" />
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold">{item.title}</span>
                     <span className="text-sm">{item.price} kr</span>
@@ -105,10 +89,7 @@ const Produkter = () => {
             </ul>
             <div className="text-center">
               <p className="font-semibold mb-2">Total: {totalPrice} kr</p>
-              <button
-                onClick={openPaymentModal}
-                className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all"
-              >
+              <button onClick={openPaymentModal} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
                 Pay Now
               </button>
             </div>
@@ -123,13 +104,7 @@ const Produkter = () => {
             <ul className="mb-4 space-y-2">
               {cartItems.map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <Image
-                    src={item.images[0]}
-                    width={40}
-                    height={40}
-                    alt={item.title}
-                    className="w-10 h-10 mr-2 rounded"
-                  />
+                  <Image src={item.images[0]} width={40} height={40} alt={item.title} className="w-10 h-10 mr-2 rounded" />
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold">{item.title}</span>
                     <span className="text-sm">{item.price} kr</span>
@@ -140,31 +115,18 @@ const Produkter = () => {
             <div className="text-center">
               <p className="font-semibold mb-2">Total: {totalPrice} kr</p>
 
-           
-            <div className="flex flex-col space-y-2 mb-4">
-  <button
-    onClick={() => alert("Login clicked")}
-    className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all"
-  >
-    Login
-  </button>
-  <button
-    onClick={() => alert("Continue as Guest clicked")}
-    className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-white hover:text-gray-500 hover:border-gray-500 border border-transparent transition-all"
-  >
-    Continue as Guest
-  </button>
-</div>
+              <div className="flex flex-col space-y-2 mb-4">
+                <button onClick={() => alert("Login clicked")} className="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition-all">
+                  Login
+                </button>
+                <button onClick={() => alert("Continue as Guest clicked")} className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-white hover:text-gray-500 hover:border-gray-500 border border-transparent transition-all">
+                  Continue as Guest
+                </button>
+              </div>
 
-
-<button
-  onClick={closePaymentModal}
-  className="bg-orange-950 text-white py-1 px-3 rounded hover:bg-white hover:text-gray-500 hover:border-gray-500 border border-transparent transition-all"
->
-  Close
-</button>
-
-    
+              <button onClick={closePaymentModal} className="bg-orange-950 text-white py-1 px-3 rounded hover:bg-white hover:text-gray-500 hover:border-gray-500 border border-transparent transition-all">
+                Close
+              </button>
             </div>
           </div>
         </div>
