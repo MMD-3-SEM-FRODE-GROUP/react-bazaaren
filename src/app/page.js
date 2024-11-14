@@ -21,7 +21,3 @@ export default async function Home() {
     </section>
   );
 }
-
-
-{/* searchParams */}
-const id = await searchParams.id 
