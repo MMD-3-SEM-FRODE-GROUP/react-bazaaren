@@ -23,11 +23,11 @@ export default function Payment() {
     }
   }, [itemsParam]);
 
-  // Calculate the total price for all products
+
   const totalPrice = products.reduce((total, product) => total + product.price, 0);
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-black">
       <h1 className="text-2xl font-bold mb-4">Payment Page</h1>
       <ul className="space-y-4">
         {products.map((product) => (
